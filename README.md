@@ -51,7 +51,7 @@ Real-World Impact: This tool can empower remote education, small businesses, and
 
 #### Frontend:
 
-HTML, CSS, JavaScript (React.js or Vanilla JS for simplicity)
+React.js
 
 WebRTC for real-time video, audio, and data sharing
 
