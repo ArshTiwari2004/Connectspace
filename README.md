@@ -120,3 +120,102 @@ WebRTC establishes direct connections between users, reducing latency and server
 
 Socket.IO is used only for signaling (initial connection setup) and chat synchronization.
 
+
+### Low level System Design Overview :
+
+The system will consist of the following components:
+
+Frontend (Client-Side): Handles the UI, video/audio rendering, whiteboard, and chat.
+
+Backend (Server-Side): Manages signaling, room creation, and user authentication.
+
+Database: Firebase for persistent storage (user data, chat logs, etc.).
+
+WebRTC: Handles peer-to-peer video/audio and data sharing.
+
+Socket.IO: Enables real-time signaling and chat synchronization.
+
+Deployment: Hosted on a scalable platform like Firebase Hosting, Vercel, or AWS.
+
+### Diagram :
+
+Will update this later .
+
+
+### Client side and server side architecture in detail :
+
+#### Frontend (Client-Side)
+Tech Stack: HTML, CSS, JavaScript (React.js or Vanilla JS), WebRTC, Canvas API.
+
+Components:
+
+Video/Audio Call: WebRTC handles real-time video and audio streaming.
+
+Chat: Socket.IO enables real-time text messaging.
+
+Whiteboard: Canvas API allows users to draw collaboratively.
+
+Screen Sharing: WebRTC’s getDisplayMedia API captures and shares the screen.
+
+Flow:
+
+User opens the website and enters a room ID.
+
+The frontend connects to the backend (Firebase) for signaling and room setup.
+
+Once connected, WebRTC establishes a P2P connection with other users in the room.
+
+#### Backend (Server-Side)
+Tech Stack: Firebase (Firestore, Firebase Functions), Socket.IO.
+
+Components:
+
+Signaling Server: Firebase Functions + Socket.IO to exchange WebRTC signaling data (SDP, ICE candidates).
+
+Room Management: Firebase Firestore stores room IDs and user metadata.
+
+Authentication: Firebase Authentication for user login/signup (optional).
+
+Flow:
+
+When a user creates or joins a room, the backend generates a unique room ID and stores it in Firestore.
+
+Socket.IO relays signaling data between peers to establish WebRTC connections.
+
+
+### WebRTC and Socket.IO implementation :
+
+#### WebRTC (Peer-to-Peer Communication)
+
+Components:
+
+Signaling: Exchange SDP (Session Description Protocol) and ICE (Interactive Connectivity Establishment) candidates via Socket.IO.
+
+Media Streams: Video, audio, and screen sharing streams are transmitted directly between peers.
+
+Data Channels: Used for sending whiteboard data or file sharing.
+
+Flow:
+
+User A sends an offer (SDP) to User B via the signaling server.
+
+User B responds with an answer (SDP) and ICE candidates.
+
+Once the connection is established, media streams flow directly between User A and User B.
+
+#### Socket.IO (Real-Time Signaling & Chat)
+
+Components:
+
+Signaling: Relays WebRTC signaling data (SDP, ICE candidates) between peers.
+
+Chat: Synchronizes text messages between users in real-time.
+
+Flow:
+
+When a user sends a chat message, it’s emitted to the server via Socket.IO.
+
+The server broadcasts the message to all users in the room.
+
+
+
