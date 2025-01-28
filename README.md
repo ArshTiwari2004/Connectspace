@@ -144,7 +144,7 @@ Will update this later .
 ### Client side and server side architecture in detail :
 
 #### Frontend (Client-Side)
-Tech Stack: HTML, CSS, JavaScript (React.js or Vanilla JS), WebRTC, Canvas API.
+Tech Stack: React.js , WebRTC, Canvas API.
 
 Components:
 
