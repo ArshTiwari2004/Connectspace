@@ -73,8 +73,7 @@ Lightweight Cloud Database: For user authentication or persistent storage (e.g.,
 
 #### Hosting:
 
-A lightweight Node.js server hosted on a low-cost platform like Heroku, Vercel, or DigitalOcean.
-
+A lightweight Node.js server hosted on a low-cost platform Vercel.
 
 ## Website Flow & Architecture:
 
