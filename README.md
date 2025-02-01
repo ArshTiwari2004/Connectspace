@@ -1,6 +1,6 @@
 # Connectspace
 
-## Problem Statement:
+## Problem solved:
 
 In today's remote work and education environment, there is a growing need for accessible, low-latency, and privacy-focused real-time communication tools that cater to underserved communities such as rural areas, low-bandwidth regions, and non-technical users. Existing solutions like Zoom, Google Meet, or Microsoft Teams are often resource-heavy, require high bandwidth, and rely on third-party servers, making them inaccessible or inefficient for users with limited internet connectivity or those who prioritize data privacy.
 
